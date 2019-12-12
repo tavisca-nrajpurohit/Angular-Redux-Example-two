@@ -1,0 +1,65 @@
+<div class="form-container">
+    <h1>User Login</h1>
+    <div class="form-elemets">
+        <form action="#">
+            <div class="element">
+                <label>Username</label>
+                <input type="text" 
+                placeholder="John Cena" 
+                required name="username" 
+                (focusin) = "usernameIsFocussed()"
+                (focusout) = "usernameNotFocussed()"
+                (keyup) = "usernameValueChanged()"
+                [(ngModel)]="username">
+            </div>
+            <div class="element">
+                <label>Password</label>
+                <input type="password" 
+                 placeholder="You Can't See Me" 
+                 required name="password" 
+                 (focusin) = "passwordIsFocussed()"
+                 (focusout) = "passwordNotFocussed()"
+                 (keyup) = "passwordValueChanged()"
+                 [(ngModel)]="password">
+            </div>
+            <button class="submit-button" (click)="SubmitForm()"><b>Submit</b></button>
+        </form>
+    </div>
+    <div>
+        <div class="state">
+            <h4>username</h4>
+            <ul>
+                <li>
+                    value: <b style="color: black;">{{displayState.username.value ? displayState.username.value : "null"}}</b>
+                </li>
+                <li>
+                    isTouched: <b><span *ngIf="!displayState.username.isTouched" style="color:red">{{displayState.username.isTouched}}</span>
+                        <span *ngIf="displayState.username.isTouched" style="color:green">{{displayState.username.isTouched}}</span></b>
+                </li>
+                <li>
+                    hasFocus: <b><span *ngIf="!displayState.username.hasFocus" style="color:red">{{displayState.username.hasFocus}}</span>
+                        <span *ngIf="displayState.username.hasFocus" style="color:green">{{displayState.username.hasFocus}}</span></b>
+                </li>
+            </ul>
+        </div>
+        <div class="state">
+            <h4>password</h4>
+            <ul>
+                    <li>
+                            value: <b style="color: black;">{{displayState.password.value ? displayState.password.value : "null"}}</b>
+                        </li>
+                        <li>
+                            isTouched: <b><span *ngIf="!displayState.password.isTouched" style="color:red">{{displayState.password.isTouched}}</span>
+                                <span *ngIf="displayState.password.isTouched" style="color:green">{{displayState.password.isTouched}}</span></b>
+                        </li>
+                        <li>
+                            hasFocus: <b><span *ngIf="!displayState.password.hasFocus" style="color:red">{{displayState.password.hasFocus}}</span>
+                                <span *ngIf="displayState.password.hasFocus" style="color:green">{{displayState.password.hasFocus}}</span></b>
+                        </li>
+            </ul>
+        </div>
+        
+        
+    </div>
+</div>
+
