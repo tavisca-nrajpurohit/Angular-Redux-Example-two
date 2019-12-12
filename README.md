@@ -1,2 +1,2 @@
 # Angular-Redux-Example-two
-two forms, two states, same store
+two forms, SAME states, SAME store
